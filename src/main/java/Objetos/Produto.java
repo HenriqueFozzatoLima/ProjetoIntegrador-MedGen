@@ -15,6 +15,7 @@ public class Produto {
     private double valCusto;
     private double valVenda;
     private String descProd;
+    private String qtdeProd;
 
     /**
      * @return the codProd
