@@ -21,34 +21,7 @@ import javax.swing.JOptionPane;
  */
 public class ProdutoDAO {
 
-    /*
-    public List<Produto> read() {
-        Connection con = Conexao.getConection();
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
-        List<Produto> produtos = new ArrayList<>();
-
-        try {
-            stmt = con.prepareStatement("SELECT * FROM tbl_produto");
-            rs = stmt.executeQuery();
-
-            while (rs.next()) {
-                Produto p = new Produto();
-                p.setId(rs.getInt("id"));
-                p.setDescricao(rs.getString("descricao"));
-                p.setValor(rs.getDouble("valor"));
-                p.setQuantidade(rs.getInt("quantidade"));
-                produtos.add(p);
-            }
-
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Falha ao obter dados. " + "\n" + e);
-        } finally {
-            Conexao.closeConnection(con, stmt, rs);
-        }
-        return produtos;
-    }
-     */
+  
 
     public List<Produto> read() {
         Connection con = Conexao.getConnection();
@@ -62,11 +35,11 @@ public class ProdutoDAO {
 
             while (rs.next()) {
                 Produto p = new Produto();
-                p.setCodProd(rs.getInt("CodProd"));
-                p.setDescProd(rs.getString("DescrProd"));
-                p.setValCusto(rs.getDouble("ValCusto"));
-                p.setValVenda(rs.getDouble("ValVenda"));
-                p.setQtdeProd(rs.getInt("Qtde"));
+                p.setCodProd(rs.getInt("Cod_Prod"));
+                p.setDescProd(rs.getString("Desc_Prod"));
+                p.setValCusto(rs.getDouble("Val_Custo"));
+                p.setValVenda(rs.getDouble("Val_Venda"));
+                p.setQtdeProd(rs.getInt("Qtde_Prod"));
                 produtos.add(p);
             }
         } catch (SQLException e) {

@@ -5,19 +5,27 @@
  */
 package Janelas;
 
+import DAO.ProdutoDAO;
+import Objetos.Produto;
+import javax.swing.JOptionPane;
+
+
+
 /**
  *
  * @author user
  */
 public class CadastroProduto extends javax.swing.JFrame {
-
+    ProdutoDAO pdao = new ProdutoDAO();
+    Produto p = new Produto();
     /**
      * Creates new form CadastroProduto
      */
     public CadastroProduto() {
         initComponents();
+       
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,9 +35,9 @@ public class CadastroProduto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTEmailFor = new javax.swing.JTextField();
-        jTInscEstaFor = new javax.swing.JTextField();
-        jTTelefoneFor = new javax.swing.JTextField();
+        jTValCusto = new javax.swing.JTextField();
+        jTQtde = new javax.swing.JTextField();
+        jTValVenda = new javax.swing.JTextField();
         jBCadastrarFor = new javax.swing.JButton();
         jBAlterarFor = new javax.swing.JButton();
         jBExcluirFor = new javax.swing.JButton();
@@ -41,11 +49,16 @@ public class CadastroProduto extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTNomeFor = new javax.swing.JTextField();
+        jTDescricao = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jBCadastrarFor.setText("Cadastrar");
+        jBCadastrarFor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBCadastrarForActionPerformed(evt);
+            }
+        });
 
         jBAlterarFor.setText("Alterar");
 
@@ -107,13 +120,13 @@ public class CadastroProduto extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTEmailFor, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTNomeFor, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTTelefoneFor, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTValCusto, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTValVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(41, 41, 41)
                         .addComponent(jLabel6)
                         .addGap(14, 14, 14)
-                        .addComponent(jTInscEstaFor, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTQtde, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 389, Short.MAX_VALUE)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(191, 191, 191))))
@@ -126,19 +139,19 @@ public class CadastroProduto extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTNomeFor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel6)
-                        .addComponent(jTInscEstaFor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTQtde, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTEmailFor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTValCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTTelefoneFor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTValVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(77, 77, 77)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBCadastrarFor)
@@ -155,6 +168,21 @@ public class CadastroProduto extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jBCadastrarForActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCadastrarForActionPerformed
+        try {
+            p.setDescProd(jTDescricao.getText());
+            p.setQtdeProd(Integer.parseInt(jTQtde.getText()));
+            p.setValCusto(Double.parseDouble(jTValCusto.getText()));
+            p.setValVenda(Double.parseDouble(jTValVenda.getText()));
+            pdao.create(p);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Falah ao cadastrar dados" + e);
+        }
+        
+        
+        
+    }//GEN-LAST:event_jBCadastrarForActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,10 +230,10 @@ public class CadastroProduto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTEmailFor;
-    private javax.swing.JTextField jTInscEstaFor;
-    private javax.swing.JTextField jTNomeFor;
-    private javax.swing.JTextField jTTelefoneFor;
+    private javax.swing.JTextField jTDescricao;
+    private javax.swing.JTextField jTQtde;
+    private javax.swing.JTextField jTValCusto;
+    private javax.swing.JTextField jTValVenda;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

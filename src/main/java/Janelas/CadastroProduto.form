@@ -52,14 +52,14 @@
                       </Group>
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jTEmailFor" alignment="0" min="-2" pref="329" max="-2" attributes="0"/>
-                          <Component id="jTNomeFor" alignment="0" min="-2" pref="329" max="-2" attributes="0"/>
-                          <Component id="jTTelefoneFor" alignment="0" min="-2" pref="165" max="-2" attributes="0"/>
+                          <Component id="jTValCusto" alignment="0" min="-2" pref="329" max="-2" attributes="0"/>
+                          <Component id="jTDescricao" alignment="0" min="-2" pref="329" max="-2" attributes="0"/>
+                          <Component id="jTValVenda" alignment="0" min="-2" pref="165" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                      <Component id="jTInscEstaFor" min="-2" pref="329" max="-2" attributes="0"/>
+                      <Component id="jTQtde" min="-2" pref="329" max="-2" attributes="0"/>
                       <EmptySpace pref="389" max="32767" attributes="0"/>
                       <Component id="jTextField1" min="-2" pref="270" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="191" max="-2" attributes="0"/>
@@ -76,22 +76,22 @@
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                      <Component id="jTNomeFor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTDescricao" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTInscEstaFor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTQtde" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTEmailFor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTValCusto" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTTelefoneFor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTValVenda" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -107,16 +107,19 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JTextField" name="jTEmailFor">
+    <Component class="javax.swing.JTextField" name="jTValCusto">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTInscEstaFor">
+    <Component class="javax.swing.JTextField" name="jTQtde">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTTelefoneFor">
+    <Component class="javax.swing.JTextField" name="jTValVenda">
     </Component>
     <Component class="javax.swing.JButton" name="jBCadastrarFor">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cadastrar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBCadastrarForActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jBAlterarFor">
       <Properties>
@@ -186,7 +189,7 @@
         <Property name="text" type="java.lang.String" value="Quantidade:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTNomeFor">
+    <Component class="javax.swing.JTextField" name="jTDescricao">
     </Component>
   </SubComponents>
 </Form>
