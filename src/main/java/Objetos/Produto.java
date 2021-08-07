@@ -15,7 +15,7 @@ public class Produto {
     private double valCusto;
     private double valVenda;
     private String descProd;
-    private String qtdeProd;
+    private int qtdeProd;
 
     /**
      * @return the codProd
@@ -71,6 +71,20 @@ public class Produto {
      */
     public void setDescProd(String descProd) {
         this.descProd = descProd;
+    }
+
+    /**
+     * @return the qtdeProd
+     */
+    public int getQtdeProd() {
+        return qtdeProd;
+    }
+
+    /**
+     * @param qtdeProd the qtdeProd to set
+     */
+    public void setQtdeProd(int qtdeProd) {
+        this.qtdeProd = qtdeProd;
     }
     
     
