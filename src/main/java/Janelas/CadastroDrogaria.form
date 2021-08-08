@@ -61,11 +61,11 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                          <Component id="jBCadastrarFor" min="-2" max="-2" attributes="0"/>
+                          <Component id="jBCadastrarDrog" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="jBAlterarFor" min="-2" max="-2" attributes="0"/>
+                          <Component id="jBAlterarDrog" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                          <Component id="jBExcluirFor" min="-2" max="-2" attributes="0"/>
+                          <Component id="jBExcluirDrog" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
@@ -81,11 +81,11 @@
                           </Group>
                           <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTTelefoneFor" min="-2" pref="165" max="-2" attributes="0"/>
+                              <Component id="jTTelefoneDrog" min="-2" pref="165" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jTEmailFor" min="-2" pref="329" max="-2" attributes="0"/>
-                                      <Component id="jTNomeFor" min="-2" pref="329" max="-2" attributes="0"/>
+                                      <Component id="jTEmailDrog" min="-2" pref="329" max="-2" attributes="0"/>
+                                      <Component id="jTNomeDrog" min="-2" pref="329" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -98,12 +98,12 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="439" max="-2" attributes="0"/>
-                                  <Component id="jTCidadeFor" min="-2" pref="122" max="-2" attributes="0"/>
+                                  <Component id="jTCidadeDrog" min="-2" pref="122" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <Component id="jTCnpjFor" min="-2" pref="329" max="-2" attributes="0"/>
+                                          <Component id="jTCnpjDrog" min="-2" pref="329" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
@@ -111,7 +111,7 @@
                                           </Group>
                                       </Group>
                                       <Group type="102" attributes="0">
-                                          <Component id="jTRazaoFor" min="-2" pref="329" max="-2" attributes="0"/>
+                                          <Component id="jTRazaoDrog" min="-2" pref="329" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
                                           <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -119,11 +119,11 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jTEstadoFor" min="-2" pref="122" max="-2" attributes="0"/>
+                                          <Component id="jTEstadoDrog" min="-2" pref="122" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                                          <Component id="jTCepFor" min="-2" pref="122" max="-2" attributes="0"/>
+                                          <Component id="jTCepDrog" min="-2" pref="122" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -151,48 +151,43 @@
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                          <Component id="jTNomeFor" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTNomeDrog" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTEstadoFor" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTEstadoDrog" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTRazaoFor" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTRazaoDrog" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTEmailFor" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTCidadeFor" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="jTEmailDrog" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTCidadeDrog" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                       <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTCnpjFor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTCnpjDrog" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTTelefoneFor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTTelefoneDrog" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTCepFor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTCepDrog" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jBCadastrarFor" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jBAlterarFor" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jBExcluirFor" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="40" max="32767" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="jBCadastrarDrog" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jBAlterarDrog" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jBExcluirDrog" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="40" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="jButton2" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace pref="40" max="32767" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="442" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -207,31 +202,31 @@
             <Property name="text" type="java.lang.String" value="Cadastro de Drogaria"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTRazaoFor">
+        <Component class="javax.swing.JTextField" name="jTRazaoDrog">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTRazaoForActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTRazaoDrogActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTCepFor">
+        <Component class="javax.swing.JTextField" name="jTCepDrog">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="name" type="java.lang.String" value="" noResource="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTNomeFor">
+        <Component class="javax.swing.JTextField" name="jTNomeDrog">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTCnpjFor">
+        <Component class="javax.swing.JTextField" name="jTCnpjDrog">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTCidadeFor">
+        <Component class="javax.swing.JTextField" name="jTCidadeDrog">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTEstadoFor">
+        <Component class="javax.swing.JTextField" name="jTEstadoDrog">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTEstadoForActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTEstadoDrogActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTEmailFor">
+        <Component class="javax.swing.JTextField" name="jTEmailDrog">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTTelefoneFor">
+        <Component class="javax.swing.JTextField" name="jTTelefoneDrog">
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
           <AuxValues>
@@ -240,7 +235,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jTabelaFor">
+            <Component class="javax.swing.JTable" name="jTabelaDrog">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="4" rowCount="4">
@@ -254,17 +249,17 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="jBCadastrarFor">
+        <Component class="javax.swing.JButton" name="jBCadastrarDrog">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cadastrar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jBAlterarFor">
+        <Component class="javax.swing.JButton" name="jBAlterarDrog">
           <Properties>
             <Property name="text" type="java.lang.String" value="Alterar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jBExcluirFor">
+        <Component class="javax.swing.JButton" name="jBExcluirDrog">
           <Properties>
             <Property name="text" type="java.lang.String" value="Excluir"/>
           </Properties>

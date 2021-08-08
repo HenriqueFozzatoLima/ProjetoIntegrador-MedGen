@@ -27,16 +27,16 @@ public class CadastrarVenda extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTCnpjFor = new javax.swing.JTextField();
-        jTEmailFor = new javax.swing.JTextField();
-        jTInscEstaFor = new javax.swing.JTextField();
-        jTTelefoneFor = new javax.swing.JTextField();
+        jTCodDrog = new javax.swing.JTextField();
+        jTTotalVen = new javax.swing.JTextField();
+        jTDataEnt = new javax.swing.JTextField();
+        jTDataVen = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTabelaFor = new javax.swing.JTable();
-        jBCadastrarFor = new javax.swing.JButton();
-        jBAlterarFor = new javax.swing.JButton();
-        jBExcluirFor = new javax.swing.JButton();
+        jTabelaVen = new javax.swing.JTable();
+        jBCadastrarVen = new javax.swing.JButton();
+        jBAlterarVen = new javax.swing.JButton();
+        jBExcluirVen = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
@@ -46,7 +46,7 @@ public class CadastrarVenda extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTNomeFor = new javax.swing.JTextField();
+        jTCodProd = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
@@ -60,7 +60,7 @@ public class CadastrarVenda extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
 
-        jTabelaFor.setModel(new javax.swing.table.DefaultTableModel(
+        jTabelaVen.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -71,13 +71,13 @@ public class CadastrarVenda extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTabelaFor);
+        jScrollPane1.setViewportView(jTabelaVen);
 
-        jBCadastrarFor.setText("Cadastrar");
+        jBCadastrarVen.setText("Cadastrar");
 
-        jBAlterarFor.setText("Alterar");
+        jBAlterarVen.setText("Alterar");
 
-        jBExcluirFor.setText("Excluir");
+        jBExcluirVen.setText("Excluir");
 
         jButton1.setText("Gerenciar Medicamentos");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +99,7 @@ public class CadastrarVenda extends javax.swing.JFrame {
         jLabel2.setText("Código do Produto:");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jLabel3.setText("Código da drogaria");
+        jLabel3.setText("Código da Drogaria");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel4.setText("Data da Venda");
@@ -143,11 +143,11 @@ public class CadastrarVenda extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(jBCadastrarFor)
+                        .addComponent(jBCadastrarVen)
                         .addGap(29, 29, 29)
-                        .addComponent(jBAlterarFor)
+                        .addComponent(jBAlterarVen)
                         .addGap(33, 33, 33)
-                        .addComponent(jBExcluirFor)
+                        .addComponent(jBExcluirVen)
                         .addGap(35, 35, 35)
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -176,8 +176,8 @@ public class CadastrarVenda extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTEmailFor, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTNomeFor, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jTTotalVen, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTCodProd, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(41, 41, 41)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel12)
@@ -185,11 +185,11 @@ public class CadastrarVenda extends javax.swing.JFrame {
                                     .addComponent(jLabel3))
                                 .addGap(14, 14, 14)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTCnpjFor, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                                    .addComponent(jTInscEstaFor))
+                                    .addComponent(jTCodDrog, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                                    .addComponent(jTDataEnt))
                                 .addGap(70, 70, 70)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 205, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 204, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addComponent(jButton3)
@@ -200,7 +200,7 @@ public class CadastrarVenda extends javax.swing.JFrame {
                                             .addComponent(jTextField2))
                                         .addGap(139, 139, 139))))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTTelefoneFor, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTDataVen, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(650, 650, 650)
                                 .addComponent(jButton2)
                                 .addGap(0, 0, Short.MAX_VALUE))))))
@@ -221,26 +221,26 @@ public class CadastrarVenda extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTNomeFor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTCodProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel6)
-                                .addComponent(jTInscEstaFor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTDataEnt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(jTEmailFor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTTotalVen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3)
-                            .addComponent(jTCnpjFor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTCodDrog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton3))
                         .addGap(14, 14, 14)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(77, 77, 77)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jBCadastrarFor)
-                                    .addComponent(jBAlterarFor)
-                                    .addComponent(jBExcluirFor)
+                                    .addComponent(jBCadastrarVen)
+                                    .addComponent(jBAlterarVen)
+                                    .addComponent(jBExcluirVen)
                                     .addComponent(jButton1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 551, Short.MAX_VALUE))
@@ -248,7 +248,7 @@ public class CadastrarVenda extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel4)
-                                        .addComponent(jTTelefoneFor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTDataVen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel12))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(18, 18, 18)
@@ -321,9 +321,9 @@ public class CadastrarVenda extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBAlterarFor;
-    private javax.swing.JButton jBCadastrarFor;
-    private javax.swing.JButton jBExcluirFor;
+    private javax.swing.JButton jBAlterarVen;
+    private javax.swing.JButton jBCadastrarVen;
+    private javax.swing.JButton jBExcluirVen;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -340,12 +340,12 @@ public class CadastrarVenda extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTCnpjFor;
-    private javax.swing.JTextField jTEmailFor;
-    private javax.swing.JTextField jTInscEstaFor;
-    private javax.swing.JTextField jTNomeFor;
-    private javax.swing.JTextField jTTelefoneFor;
-    private javax.swing.JTable jTabelaFor;
+    private javax.swing.JTextField jTCodDrog;
+    private javax.swing.JTextField jTCodProd;
+    private javax.swing.JTextField jTDataEnt;
+    private javax.swing.JTextField jTDataVen;
+    private javax.swing.JTextField jTTotalVen;
+    private javax.swing.JTable jTabelaVen;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;

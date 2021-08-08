@@ -10,19 +10,16 @@ package Objetos;
  * @author kaiop
  */
 public class Drogaria {
-    
-   private String nomeDrogaria;
-   private String cnpj;
-   private String estado;
-   private String cidade;
-   private int cep;
-   private String bairro;
-   private String rua;
-   private String email;
-   private String complemento;
-   private int numero;
-   private int codDrogaria;
-   private String razaoSocial;
+
+    private String nomeDrogaria;
+    private String cnpj;
+    private String estado;
+    private String cidade;
+    private String cep;
+    private String email;
+    private int numero;
+    private int codDrogaria;
+    private String razaoSocial;
 
     /**
      * @return the nomeDrogaria
@@ -46,7 +43,7 @@ public class Drogaria {
     }
 
     /**
-     * @param cnpj the cnpj to set
+     * @param the cnpj to set
      */
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
@@ -74,7 +71,7 @@ public class Drogaria {
     }
 
     /**
-     * @param cidade the cidade to set
+     * @param  the cidade to set
      */
     public void setCidade(String cidade) {
         this.cidade = cidade;
@@ -82,46 +79,29 @@ public class Drogaria {
 
     /**
      * @return the cep
-     */
-    public int getCep() {
-        return cep;
-    }
-
-    /**
+     *
+     *
+     * /
+     **
      * @param cep the cep to set
      */
-    public void setCep(int cep) {
-        this.cep = cep;
+    public void setCep(String cep) {
+        this.setCep(cep);
     }
 
     /**
      * @return the bairro
+     *
+     * /
+     **
+     * @param the bairro to set
      */
-    public String getBairro() {
-        return bairro;
-    }
-
-    /**
-     * @param bairro the bairro to set
-     */
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
-    }
-
     /**
      * @return the rua
      */
-    public String getRua() {
-        return rua;
-    }
-
     /**
-     * @param rua the rua to set
+     * @param the rua to set
      */
-    public void setRua(String rua) {
-        this.rua = rua;
-    }
-
     /**
      * @return the email
      */
@@ -139,17 +119,9 @@ public class Drogaria {
     /**
      * @return the complemento
      */
-    public String getComplemento() {
-        return complemento;
-    }
-
     /**
-     * @param complemento the complemento to set
+     * @param  the complemento to set
      */
-    public void setComplemento(String complemento) {
-        this.complemento = complemento;
-    }
-
     /**
      * @return the numero
      */
@@ -191,5 +163,17 @@ public class Drogaria {
     public void setRazaoSocial(String razaoSocial) {
         this.razaoSocial = razaoSocial;
     }
-    
+
+    /**
+     * @return the cep
+     */
+    public String getCep() {
+        return cep;
+    }
+
+    /**
+     * @param  the cep to set
+     */
+
+
 }

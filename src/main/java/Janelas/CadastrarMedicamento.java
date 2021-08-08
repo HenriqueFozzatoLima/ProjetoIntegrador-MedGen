@@ -27,8 +27,8 @@ public class CadastrarMedicamento extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jBAlterarFor = new javax.swing.JButton();
-        jBExcluirFor = new javax.swing.JButton();
+        jBAlterarMed = new javax.swing.JButton();
+        jBExcluirMed = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
@@ -36,18 +36,18 @@ public class CadastrarMedicamento extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTNomeFor = new javax.swing.JTextField();
-        jTEmailFor = new javax.swing.JTextField();
-        jTInscEstaFor = new javax.swing.JTextField();
-        jBCadastrarFor = new javax.swing.JButton();
+        jTDescMed = new javax.swing.JTextField();
+        jTCodFor = new javax.swing.JTextField();
+        jTQtdeMed = new javax.swing.JTextField();
+        jBCadastrarMed = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTabelaFor = new javax.swing.JTable();
+        jTabelaMed = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jBAlterarFor.setText("Alterar");
+        jBAlterarMed.setText("Alterar");
 
-        jBExcluirFor.setText("Excluir");
+        jBExcluirMed.setText("Excluir");
 
         jButton1.setText("Gerenciar Medicamentos");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -72,9 +72,9 @@ public class CadastrarMedicamento extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel6.setText("Quantidade:");
 
-        jBCadastrarFor.setText("Cadastrar");
+        jBCadastrarMed.setText("Cadastrar");
 
-        jTabelaFor.setModel(new javax.swing.table.DefaultTableModel(
+        jTabelaMed.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -85,7 +85,7 @@ public class CadastrarMedicamento extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTabelaFor);
+        jScrollPane1.setViewportView(jTabelaMed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,11 +99,11 @@ public class CadastrarMedicamento extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(jBCadastrarFor)
+                        .addComponent(jBCadastrarMed)
                         .addGap(29, 29, 29)
-                        .addComponent(jBAlterarFor)
+                        .addComponent(jBAlterarMed)
                         .addGap(33, 33, 33)
-                        .addComponent(jBExcluirFor)
+                        .addComponent(jBExcluirMed)
                         .addGap(35, 35, 35)
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -116,12 +116,12 @@ public class CadastrarMedicamento extends javax.swing.JFrame {
                             .addComponent(jLabel5))
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTEmailFor, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTNomeFor, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTCodFor, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTDescMed, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(41, 41, 41)
                         .addComponent(jLabel6)
                         .addGap(14, 14, 14)
-                        .addComponent(jTInscEstaFor, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTQtdeMed, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 365, Short.MAX_VALUE)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(191, 191, 191))))
@@ -137,20 +137,20 @@ public class CadastrarMedicamento extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTNomeFor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTDescMed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel6)
-                        .addComponent(jTInscEstaFor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTQtdeMed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTEmailFor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTCodFor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(113, 113, 113)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBCadastrarFor)
-                    .addComponent(jBAlterarFor)
-                    .addComponent(jBExcluirFor)
+                    .addComponent(jBCadastrarMed)
+                    .addComponent(jBAlterarMed)
+                    .addComponent(jBExcluirMed)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -201,9 +201,9 @@ public class CadastrarMedicamento extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBAlterarFor;
-    private javax.swing.JButton jBCadastrarFor;
-    private javax.swing.JButton jBExcluirFor;
+    private javax.swing.JButton jBAlterarMed;
+    private javax.swing.JButton jBCadastrarMed;
+    private javax.swing.JButton jBExcluirMed;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -211,10 +211,10 @@ public class CadastrarMedicamento extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTEmailFor;
-    private javax.swing.JTextField jTInscEstaFor;
-    private javax.swing.JTextField jTNomeFor;
-    private javax.swing.JTable jTabelaFor;
+    private javax.swing.JTextField jTCodFor;
+    private javax.swing.JTextField jTDescMed;
+    private javax.swing.JTextField jTQtdeMed;
+    private javax.swing.JTable jTabelaMed;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

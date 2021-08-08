@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package DAO;
-
 import BD.Conexao;
 import Objetos.Drogaria;
 import java.sql.Connection;
@@ -14,14 +13,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
-
 /**
  *
- * @author user
+ * @author kaiop
  */
 public class DrogariaDAO {
     
-       public List<Drogaria> read() {
+    public List<Drogaria> read() {
         Connection con = Conexao.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -115,5 +113,7 @@ public class DrogariaDAO {
         }
 
     } 
+    
+    
     
 }

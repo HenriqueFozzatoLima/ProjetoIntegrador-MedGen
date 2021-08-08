@@ -10,7 +10,10 @@ package Janelas;
  * @author kaiop
  */
 public class CadastroDrogaria extends javax.swing.JFrame {
-
+    
+    
+    
+    
     /**
      * Creates new form CadastroDrogaria
      */
@@ -29,19 +32,19 @@ public class CadastroDrogaria extends javax.swing.JFrame {
 
         jFundo = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTRazaoFor = new javax.swing.JTextField();
-        jTCepFor = new javax.swing.JTextField();
-        jTNomeFor = new javax.swing.JTextField();
-        jTCnpjFor = new javax.swing.JTextField();
-        jTCidadeFor = new javax.swing.JTextField();
-        jTEstadoFor = new javax.swing.JTextField();
-        jTEmailFor = new javax.swing.JTextField();
-        jTTelefoneFor = new javax.swing.JTextField();
+        jTRazaoDrog = new javax.swing.JTextField();
+        jTCepDrog = new javax.swing.JTextField();
+        jTNomeDrog = new javax.swing.JTextField();
+        jTCnpjDrog = new javax.swing.JTextField();
+        jTCidadeDrog = new javax.swing.JTextField();
+        jTEstadoDrog = new javax.swing.JTextField();
+        jTEmailDrog = new javax.swing.JTextField();
+        jTTelefoneDrog = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTabelaFor = new javax.swing.JTable();
-        jBCadastrarFor = new javax.swing.JButton();
-        jBAlterarFor = new javax.swing.JButton();
-        jBExcluirFor = new javax.swing.JButton();
+        jTabelaDrog = new javax.swing.JTable();
+        jBCadastrarDrog = new javax.swing.JButton();
+        jBAlterarDrog = new javax.swing.JButton();
+        jBExcluirDrog = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
@@ -62,22 +65,22 @@ public class CadastroDrogaria extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Cadastro de Drogaria");
 
-        jTRazaoFor.addActionListener(new java.awt.event.ActionListener() {
+        jTRazaoDrog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTRazaoForActionPerformed(evt);
+                jTRazaoDrogActionPerformed(evt);
             }
         });
 
-        jTCepFor.setToolTipText("");
-        jTCepFor.setName(""); // NOI18N
+        jTCepDrog.setToolTipText("");
+        jTCepDrog.setName(""); // NOI18N
 
-        jTEstadoFor.addActionListener(new java.awt.event.ActionListener() {
+        jTEstadoDrog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTEstadoForActionPerformed(evt);
+                jTEstadoDrogActionPerformed(evt);
             }
         });
 
-        jTabelaFor.setModel(new javax.swing.table.DefaultTableModel(
+        jTabelaDrog.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -88,13 +91,13 @@ public class CadastroDrogaria extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTabelaFor);
+        jScrollPane1.setViewportView(jTabelaDrog);
 
-        jBCadastrarFor.setText("Cadastrar");
+        jBCadastrarDrog.setText("Cadastrar");
 
-        jBAlterarFor.setText("Alterar");
+        jBAlterarDrog.setText("Alterar");
 
-        jBExcluirFor.setText("Excluir");
+        jBExcluirDrog.setText("Excluir");
 
         jButton1.setText("Gerenciar Medicamentos");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -148,11 +151,11 @@ public class CadastroDrogaria extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jFundoLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(jBCadastrarFor)
+                        .addComponent(jBCadastrarDrog)
                         .addGap(29, 29, 29)
-                        .addComponent(jBAlterarFor)
+                        .addComponent(jBAlterarDrog)
                         .addGap(33, 33, 33)
-                        .addComponent(jBExcluirFor)
+                        .addComponent(jBExcluirDrog)
                         .addGap(35, 35, 35)
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -166,11 +169,11 @@ public class CadastroDrogaria extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addGap(25, 25, 25)
                         .addGroup(jFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTTelefoneFor, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTTelefoneDrog, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jFundoLayout.createSequentialGroup()
                                 .addGroup(jFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTEmailFor, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTNomeFor, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jTEmailDrog, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTNomeDrog, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(41, 41, 41)
                                 .addGroup(jFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel7)
@@ -179,26 +182,26 @@ public class CadastroDrogaria extends javax.swing.JFrame {
                         .addGroup(jFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jFundoLayout.createSequentialGroup()
                                 .addGap(439, 439, 439)
-                                .addComponent(jTCidadeFor, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jTCidadeDrog, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jFundoLayout.createSequentialGroup()
                                 .addGroup(jFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jFundoLayout.createSequentialGroup()
-                                        .addComponent(jTCnpjFor, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTCnpjDrog, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(56, 56, 56)
                                         .addGroup(jFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel9)
                                             .addComponent(jLabel10)))
                                     .addGroup(jFundoLayout.createSequentialGroup()
-                                        .addComponent(jTRazaoFor, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTRazaoDrog, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel8)))
                                 .addGroup(jFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jFundoLayout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTEstadoFor, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jTEstadoDrog, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jFundoLayout.createSequentialGroup()
                                         .addGap(5, 5, 5)
-                                        .addComponent(jTCepFor, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(jTCepDrog, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(0, 734, Short.MAX_VALUE))))
             .addGroup(jFundoLayout.createSequentialGroup()
                 .addContainerGap()
@@ -216,40 +219,37 @@ public class CadastroDrogaria extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addGroup(jFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTNomeFor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTNomeDrog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel8)
-                        .addComponent(jTEstadoFor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTEstadoDrog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel7)
-                        .addComponent(jTRazaoFor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTRazaoDrog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTEmailFor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTCidadeFor, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTEmailDrog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTCidadeDrog, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
                     .addComponent(jLabel3)
-                    .addComponent(jTCnpjFor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTCnpjDrog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15)
                 .addGroup(jFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTTelefoneFor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTTelefoneDrog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
-                    .addComponent(jTCepFor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTCepDrog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addGroup(jFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFundoLayout.createSequentialGroup()
-                        .addGroup(jFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jBCadastrarFor)
-                            .addComponent(jBAlterarFor)
-                            .addComponent(jBExcluirFor)
-                            .addComponent(jButton1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFundoLayout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)))
+                    .addGroup(jFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jBCadastrarDrog)
+                        .addComponent(jBAlterarDrog)
+                        .addComponent(jBExcluirDrog)
+                        .addComponent(jButton1))
+                    .addComponent(jButton2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -270,9 +270,9 @@ public class CadastroDrogaria extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTEstadoForActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTEstadoForActionPerformed
+    private void jTEstadoDrogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTEstadoDrogActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTEstadoForActionPerformed
+    }//GEN-LAST:event_jTEstadoDrogActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -282,9 +282,9 @@ public class CadastroDrogaria extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jTRazaoForActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTRazaoForActionPerformed
+    private void jTRazaoDrogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTRazaoDrogActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTRazaoForActionPerformed
+    }//GEN-LAST:event_jTRazaoDrogActionPerformed
 
     /**
      * @param args the command line arguments
@@ -322,9 +322,9 @@ public class CadastroDrogaria extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBAlterarFor;
-    private javax.swing.JButton jBCadastrarFor;
-    private javax.swing.JButton jBExcluirFor;
+    private javax.swing.JButton jBAlterarDrog;
+    private javax.swing.JButton jBCadastrarDrog;
+    private javax.swing.JButton jBExcluirDrog;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JPanel jFundo;
@@ -338,15 +338,15 @@ public class CadastroDrogaria extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTCepFor;
-    private javax.swing.JTextField jTCidadeFor;
-    private javax.swing.JTextField jTCnpjFor;
-    private javax.swing.JTextField jTEmailFor;
-    private javax.swing.JTextField jTEstadoFor;
-    private javax.swing.JTextField jTNomeFor;
-    private javax.swing.JTextField jTRazaoFor;
-    private javax.swing.JTextField jTTelefoneFor;
-    private javax.swing.JTable jTabelaFor;
+    private javax.swing.JTextField jTCepDrog;
+    private javax.swing.JTextField jTCidadeDrog;
+    private javax.swing.JTextField jTCnpjDrog;
+    private javax.swing.JTextField jTEmailDrog;
+    private javax.swing.JTextField jTEstadoDrog;
+    private javax.swing.JTextField jTNomeDrog;
+    private javax.swing.JTextField jTRazaoDrog;
+    private javax.swing.JTextField jTTelefoneDrog;
+    private javax.swing.JTable jTabelaDrog;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

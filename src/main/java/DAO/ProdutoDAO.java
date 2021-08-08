@@ -21,8 +21,6 @@ import javax.swing.JOptionPane;
  */
 public class ProdutoDAO {
 
-  
-
     public List<Produto> read() {
         Connection con = Conexao.getConnection();
         PreparedStatement stmt = null;
@@ -62,7 +60,6 @@ public class ProdutoDAO {
             stmt.setInt(4, p.getQtdeProd());
 
             stmt.execute();
-            
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Falha ao cadastrar. " + "\n" + e);
@@ -71,7 +68,7 @@ public class ProdutoDAO {
         }
     }
 
-      public void update(Produto p) {
+    public void update(Produto p) {
         Connection con = Conexao.getConnection();
         PreparedStatement stmt = null;
 
@@ -79,12 +76,11 @@ public class ProdutoDAO {
             stmt = con.prepareStatement("UPDATE tbl_produto SET DESC_PROD = ?, VAL_CUSTO = ?, VAL_VENDA = ?, QTDE_PROD = ? WHERE COD_PROD = ?");
             stmt.setString(1, p.getDescProd());
             stmt.setDouble(2, p.getValCusto());
-            stmt.setDouble(3, p.getValCusto());
+            stmt.setDouble(3, p.getValVenda());
             stmt.setInt(4, p.getQtdeProd());
             stmt.setInt(5, p.getCodProd());
 
             stmt.execute();
-            
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Falha ao atualizar. " + "\n" + e);
@@ -92,25 +88,22 @@ public class ProdutoDAO {
             Conexao.closeConnection(con, stmt);
         }
     }
-    
-      public void delete(Produto p) {
+
+    public void delete(Produto p) {
         Connection con = Conexao.getConnection();
         PreparedStatement stmt = null;
-        
+
         try {
             stmt = con.prepareStatement("DELETE FROM tbl_produto WHERE COD_PROD = ?");
             stmt.setInt(1, p.getCodProd());
             stmt.execute();
-                   
-            
-            
+
         } catch (SQLException e) {
-        JOptionPane.showMessageDialog(null, "Falha ao remover. " + "\n" + e);
+            JOptionPane.showMessageDialog(null, "Falha ao remover. " + "\n" + e);
         } finally {
             Conexao.closeConnection(con, stmt);
         }
 
     }
-    
-    
+
 }

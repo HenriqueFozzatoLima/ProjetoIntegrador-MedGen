@@ -5,7 +5,12 @@
  */
 package Janelas;
 
+import DAO.FornecedorDAO;
+import Model.FornecedorTableModel;
+import Objetos.Fornecedor;
 import java.awt.Color;
+import java.util.Set;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,17 +18,29 @@ import java.awt.Color;
  */
 public class CadastroFornecedor extends javax.swing.JFrame {
 
+    FornecedorTableModel ft = new FornecedorTableModel();
+
     /**
      * Creates new form CadastroFornecedor
      */
     public CadastroFornecedor() {
         initComponents();
-        //setLocationRelativeTo(jFundo);
-       // getContentPane().setBackground(Color.darkGray);
-        
+        jTabelaFor.setModel(ft);
+        ft.recarregaTabela();
+
     }
     
-    
+    public void limparCadastro(){
+        jTNomeFor.setText("");
+        jTEmailFor.setText("");
+        jTTelefoneFor.setText("");
+        jTInscEstaFor.setText("");
+        jTCnpjFor.setText("");
+        jTRazaoSocial.setText("");
+        jTEstadoFor.setText("");
+        jTCidadeFor.setText("");
+        jTCepFor.setText("");
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -71,10 +88,25 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         });
 
         jBCadastrarFor.setText("Cadastrar");
+        jBCadastrarFor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBCadastrarForActionPerformed(evt);
+            }
+        });
 
         jBAlterarFor.setText("Alterar");
+        jBAlterarFor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBAlterarForActionPerformed(evt);
+            }
+        });
 
         jBExcluirFor.setText("Excluir");
+        jBExcluirFor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBExcluirForActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Gerenciar Medicamentos");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -136,6 +168,11 @@ public class CadastroFornecedor extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTabelaFor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabelaForMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTabelaFor);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -270,6 +307,88 @@ public class CadastroFornecedor extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jBCadastrarForActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCadastrarForActionPerformed
+
+        try {
+            Fornecedor f = new Fornecedor();
+            FornecedorDAO fdao = new FornecedorDAO();
+
+            f.setNomeFornecedor(jTNomeFor.getText());
+            f.setCep(jTCepFor.getText());
+            f.setCidade(jTCidadeFor.getText());
+            f.setEmail(jTEmailFor.getText());
+            f.setEstado(jTEstadoFor.getText());
+            f.setInscricaoEstadual(jTInscEstaFor.getText());
+            f.setRazaoSocial(jTRazaoSocial.getText());
+            f.setCnpj(jTCnpjFor.getText());
+            
+            fdao.create(f);
+            ft.recarregaTabela();
+            limparCadastro();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Falha ao cadastrar dados" + e);
+        }
+
+
+    }//GEN-LAST:event_jBCadastrarForActionPerformed
+
+    private void jBExcluirForActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBExcluirForActionPerformed
+        
+        if (jTabelaFor.getSelectedRow() != -1) {
+            Fornecedor f = ft.pegaDadosLinha(jTabelaFor.getSelectedRow());
+            FornecedorDAO fdao = new FornecedorDAO();
+            
+            fdao.delete(f);
+            ft.recarregaTabela();
+            limparCadastro();
+
+        }
+
+
+    }//GEN-LAST:event_jBExcluirForActionPerformed
+
+    private void jBAlterarForActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAlterarForActionPerformed
+        try {
+           
+        if (jTabelaFor.getSelectedRow() != -1) {
+            ft.setValueAt(jTNomeFor.getText(), jTabelaFor.getSelectedRow(), 0);
+            ft.setValueAt(jTRazaoSocial.getText(), jTabelaFor.getSelectedRow(), 1);
+            ft.setValueAt(jTEmailFor.getText(), jTabelaFor.getSelectedRow(), 2);
+            ft.setValueAt(jTCnpjFor.getText(), jTabelaFor.getSelectedRow(), 3);
+            ft.setValueAt(jTCidadeFor.getText(), jTabelaFor.getSelectedRow(), 4);
+            ft.setValueAt(jTEstadoFor.getText(), jTabelaFor.getSelectedRow(), 5);
+            ft.setValueAt(jTCepFor.getText(), jTabelaFor.getSelectedRow(), 6);
+            ft.setValueAt(jTInscEstaFor.getText(), jTabelaFor.getSelectedRow(), 7);
+            
+            Fornecedor f = ft.pegaDadosLinha(jTabelaFor.getSelectedRow());
+            FornecedorDAO fdao = new FornecedorDAO();
+            
+            fdao.update(f);
+            ft.recarregaTabela();
+            limparCadastro();
+        }
+       
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Falha ao atualizar dados: " + e);
+        }
+   
+        
+    }//GEN-LAST:event_jBAlterarForActionPerformed
+
+    private void jTabelaForMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabelaForMouseClicked
+        Fornecedor f = ft.pegaDadosLinha(jTabelaFor.getSelectedRow());
+        jTNomeFor.setText(f.getNomeFornecedor());
+        jTCepFor.setText(f.getCep());
+        jTCidadeFor.setText(f.getCidade());
+        jTEmailFor.setText(f.getEmail());
+        jTEstadoFor.setText(f.getEstado());
+        jTInscEstaFor.setText(f.getInscricaoEstadual());
+        jTRazaoSocial.setText(f.getRazaoSocial());
+        jTCnpjFor.setText(f.getCnpj());
+        
+        
+    }//GEN-LAST:event_jTabelaForMouseClicked
 
     /**
      * @param args the command line arguments

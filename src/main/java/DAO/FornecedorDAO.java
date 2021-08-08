@@ -57,7 +57,7 @@ public class FornecedorDAO {
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("INSERT INTO tbl_produto (NOME_LAB, RAZ_SOCIAL, EMAIL_LAB, CNPJ, CIDADE, ESTADO, CEP, INSCRI_ESTA ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+            stmt = con.prepareStatement("INSERT INTO tbl_fornecedor (NOME_LAB, RAZ_SOCIAL, EMAIL_LAB, CNPJ, CIDADE, ESTADO, CEP, INSCRI_ESTA ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
             stmt.setString(1, f.getNomeFornecedor());
             stmt.setString(2, f.getRazaoSocial());
             stmt.setString(3, f.getEmail());
@@ -80,7 +80,7 @@ public class FornecedorDAO {
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("UPDATE tbl_produto SET NOME_LAB = ?, RAZ_SOCIAL = ?, EMAIL_LAB = ?, CNPJ = ?, CIDADE = ?, ESTADO = ?, CEP = ?, INSCRI_ESTA = ? WHERE COD_LAB = ?");
+            stmt = con.prepareStatement("UPDATE tbl_fornecedor SET NOME_LAB = ?, RAZ_SOCIAL = ?, EMAIL_LAB = ?, CNPJ = ?, CIDADE = ?, ESTADO = ?, CEP = ?, INSCRI_ESTA = ? WHERE COD_LAB = ?");
             stmt.setString(1, f.getNomeFornecedor());
             stmt.setString(2, f.getRazaoSocial());
             stmt.setString(3, f.getEmail());
@@ -104,7 +104,7 @@ public class FornecedorDAO {
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("DELETE FROM tbl_produto WHERE COD_LAB = ?");
+            stmt = con.prepareStatement("DELETE FROM tbl_fornecedor WHERE COD_LAB = ?");
             stmt.setInt(1, f.getCodForncedor());
             stmt.execute();
 

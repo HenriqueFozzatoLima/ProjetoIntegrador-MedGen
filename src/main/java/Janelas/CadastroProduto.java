@@ -6,26 +6,34 @@
 package Janelas;
 
 import DAO.ProdutoDAO;
+import Model.ProdutoTableModel;
 import Objetos.Produto;
 import javax.swing.JOptionPane;
-
-
 
 /**
  *
  * @author user
  */
 public class CadastroProduto extends javax.swing.JFrame {
-    ProdutoDAO pdao = new ProdutoDAO();
-    Produto p = new Produto();
+
+    ProdutoTableModel pt = new ProdutoTableModel();
+
     /**
      * Creates new form CadastroProduto
      */
     public CadastroProduto() {
         initComponents();
-       
+        jTabelaProd.setModel(pt);
+        pt.recarregaTabela();
     }
-    
+
+    public void limparCadastro() {
+        jTDescricaoProd.setText("");
+        jTValCustoProd.setText("");
+        jTValVendaProd.setText("");
+        jTQtdeProd.setText("");
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,12 +43,12 @@ public class CadastroProduto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTValCusto = new javax.swing.JTextField();
-        jTQtde = new javax.swing.JTextField();
-        jTValVenda = new javax.swing.JTextField();
-        jBCadastrarFor = new javax.swing.JButton();
-        jBAlterarFor = new javax.swing.JButton();
-        jBExcluirFor = new javax.swing.JButton();
+        jTValCustoProd = new javax.swing.JTextField();
+        jTQtdeProd = new javax.swing.JTextField();
+        jTValVendaProd = new javax.swing.JTextField();
+        jBCadastrarProd = new javax.swing.JButton();
+        jBAlterarProd = new javax.swing.JButton();
+        jBExcluirProd = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
@@ -49,27 +57,34 @@ public class CadastroProduto extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTDescricao = new javax.swing.JTextField();
+        jTDescricaoProd = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTabelaProd = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jBCadastrarFor.setText("Cadastrar");
-        jBCadastrarFor.addActionListener(new java.awt.event.ActionListener() {
+        jBCadastrarProd.setText("Cadastrar");
+        jBCadastrarProd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBCadastrarForActionPerformed(evt);
+                jBCadastrarProdActionPerformed(evt);
             }
         });
 
-        jBAlterarFor.setText("Alterar");
+        jBAlterarProd.setText("Alterar");
+        jBAlterarProd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBAlterarProdActionPerformed(evt);
+            }
+        });
 
-        jBExcluirFor.setText("Excluir");
+        jBExcluirProd.setText("Excluir");
+        jBExcluirProd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBExcluirProdActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Gerenciar Medicamentos");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         jTextField1.setText("Pesquisa");
 
@@ -90,6 +105,24 @@ public class CadastroProduto extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel6.setText("Quantidade:");
 
+        jTabelaProd.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jTabelaProd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabelaProdMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTabelaProd);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -98,15 +131,12 @@ public class CadastroProduto extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(jBCadastrarFor)
+                        .addComponent(jBCadastrarProd)
                         .addGap(29, 29, 29)
-                        .addComponent(jBAlterarFor)
+                        .addComponent(jBAlterarProd)
                         .addGap(33, 33, 33)
-                        .addComponent(jBExcluirFor)
+                        .addComponent(jBExcluirProd)
                         .addGap(35, 35, 35)
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -120,16 +150,21 @@ public class CadastroProduto extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTValCusto, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTValVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTValCustoProd, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTDescricaoProd, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTValVendaProd, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(41, 41, 41)
                         .addComponent(jLabel6)
                         .addGap(14, 14, 14)
-                        .addComponent(jTQtde, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTQtdeProd, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 389, Short.MAX_VALUE)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(191, 191, 191))))
+                        .addGap(191, 191, 191))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1418, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,50 +174,106 @@ public class CadastroProduto extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTDescricaoProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel6)
-                        .addComponent(jTQtde, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTQtdeProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTValCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTValCustoProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTValVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTValVendaProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(77, 77, 77)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBCadastrarFor)
-                    .addComponent(jBAlterarFor)
-                    .addComponent(jBExcluirFor)
+                    .addComponent(jBCadastrarProd)
+                    .addComponent(jBAlterarProd)
+                    .addComponent(jBExcluirProd)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addContainerGap(550, Short.MAX_VALUE))
+                .addGap(58, 58, 58)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jBCadastrarForActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCadastrarForActionPerformed
+    private void jBCadastrarProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCadastrarProdActionPerformed
         try {
-            p.setDescProd(jTDescricao.getText());
-            p.setQtdeProd(Integer.parseInt(jTQtde.getText()));
-            p.setValCusto(Double.parseDouble(jTValCusto.getText()));
-            p.setValVenda(Double.parseDouble(jTValVenda.getText()));
+            ProdutoDAO pdao = new ProdutoDAO();
+            Produto p = new Produto();
+
+            p.setDescProd(jTDescricaoProd.getText());
+            p.setQtdeProd(Integer.parseInt(jTQtdeProd.getText()));
+            p.setValCusto(Double.parseDouble(jTValCustoProd.getText()));
+            p.setValVenda(Double.parseDouble(jTValVendaProd.getText()));
+
             pdao.create(p);
+            pt.recarregaTabela();
+            limparCadastro();
+
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Falah ao cadastrar dados" + e);
+            JOptionPane.showMessageDialog(null, "Falha ao cadastrar dados" + e);
         }
-        
-        
-        
-    }//GEN-LAST:event_jBCadastrarForActionPerformed
+
+
+    }//GEN-LAST:event_jBCadastrarProdActionPerformed
+
+    private void jBAlterarProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAlterarProdActionPerformed
+
+        try {
+
+            if (jTabelaProd.getSelectedRow() != -1) {
+                pt.setValueAt(jTDescricaoProd.getText(), jTabelaProd.getSelectedRow(), 0);
+                pt.setValueAt(jTValCustoProd.getText(), jTabelaProd.getSelectedRow(), 1);
+                pt.setValueAt(jTValVendaProd.getText(), jTabelaProd.getSelectedRow(), 2);
+                pt.setValueAt(jTQtdeProd.getText(), jTabelaProd.getSelectedRow(), 3);
+
+                Produto p = pt.pegaDadosLinha(jTabelaProd.getSelectedRow());
+                ProdutoDAO pdao = new ProdutoDAO();
+
+                pdao.update(p);
+                pt.recarregaTabela();
+                limparCadastro();
+
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Falha ao atualizar dados: " + e);
+        }
+
+
+    }//GEN-LAST:event_jBAlterarProdActionPerformed
+
+    private void jBExcluirProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBExcluirProdActionPerformed
+
+        if (jTabelaProd.getSelectedRow() != -1) {
+            Produto p = pt.pegaDadosLinha(jTabelaProd.getSelectedRow());
+            ProdutoDAO pdao = new ProdutoDAO();
+
+            pdao.delete(p);
+            pt.recarregaTabela();
+            limparCadastro();
+
+        }
+
+
+    }//GEN-LAST:event_jBExcluirProdActionPerformed
+
+    private void jTabelaProdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabelaProdMouseClicked
+
+        Produto p = pt.pegaDadosLinha(jTabelaProd.getSelectedRow());
+
+        jTDescricaoProd.setText(p.getDescProd());
+        jTValCustoProd.setText(String.valueOf(p.getValCusto()));
+        jTValVendaProd.setText(String.valueOf(p.getValVenda()));
+        jTQtdeProd.setText(String.valueOf(p.getQtdeProd()));
+
+    }//GEN-LAST:event_jTabelaProdMouseClicked
 
     /**
      * @param args the command line arguments
@@ -220,9 +311,9 @@ public class CadastroProduto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBAlterarFor;
-    private javax.swing.JButton jBCadastrarFor;
-    private javax.swing.JButton jBExcluirFor;
+    private javax.swing.JButton jBAlterarProd;
+    private javax.swing.JButton jBCadastrarProd;
+    private javax.swing.JButton jBExcluirProd;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -230,10 +321,12 @@ public class CadastroProduto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTDescricao;
-    private javax.swing.JTextField jTQtde;
-    private javax.swing.JTextField jTValCusto;
-    private javax.swing.JTextField jTValVenda;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTDescricaoProd;
+    private javax.swing.JTextField jTQtdeProd;
+    private javax.swing.JTextField jTValCustoProd;
+    private javax.swing.JTextField jTValVendaProd;
+    private javax.swing.JTable jTabelaProd;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
