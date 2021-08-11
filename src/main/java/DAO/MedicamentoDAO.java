@@ -27,7 +27,7 @@ public class MedicamentoDAO {
         List<Medicamento> medicamentos = new ArrayList<>();
 
         try {
-            stmt = con.prepareStatement("SELECT * FROM tbl_medicamentos");
+            stmt = con.prepareStatement("SELECT * FROM tbl_medicamento");
             rs = stmt.executeQuery();
 
             while (rs.next()) {
@@ -51,7 +51,7 @@ public class MedicamentoDAO {
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("INSERT INTO tbl_medicamentos (DESC_MED, QTDE_MED, COD_LAB) VALUES (?, ?, ?)");
+            stmt = con.prepareStatement("INSERT INTO tbl_medicamento (DESC_MED, QTDE_MED, COD_LAB) VALUES (?, ?, ?)");
             stmt.setString(1, med.getDescricaoMed());
             stmt.setDouble(2, med.getQtdeMed());
             stmt.setDouble(3, med.getCodLab());
@@ -91,7 +91,7 @@ public class MedicamentoDAO {
         PreparedStatement stmt = null;
         
         try {
-            stmt = con.prepareStatement("DELETE FROM tbl_medicamentos WHERE COD_MED = ?");
+            stmt = con.prepareStatement("DELETE FROM tbl_medicamento WHERE COD_MED = ?");
             stmt.setInt(1, med.getCodMed());
             stmt.execute();
                    

@@ -5,12 +5,17 @@
  */
 package Janelas;
 
+import DAO.DrogariaDAO;
+import Model.DrogariaTableModel;
+import Objetos.Drogaria;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author kaiop
  */
 public class CadastroDrogaria extends javax.swing.JFrame {
-    
+        DrogariaTableModel dt = new DrogariaTableModel();
     
     
     
@@ -19,7 +24,19 @@ public class CadastroDrogaria extends javax.swing.JFrame {
      */
     public CadastroDrogaria() {
         initComponents();
+        jTabelaDrog.setModel(dt);
+        dt.recarregaTabela();
     }
+    
+       public void limparCadastro(){
+        jTNomeDrog.setText("");
+        jTRazaoDrog.setText("");
+        jTEmailDrog.setText("");
+        jTCnpjDrog.setText("");
+        jTCidadeDrog.setText("");
+        jTEstadoDrog.setText("");
+        jTCepDrog.setText("");
+       }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -65,20 +82,8 @@ public class CadastroDrogaria extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Cadastro de Drogaria");
 
-        jTRazaoDrog.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTRazaoDrogActionPerformed(evt);
-            }
-        });
-
         jTCepDrog.setToolTipText("");
         jTCepDrog.setName(""); // NOI18N
-
-        jTEstadoDrog.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTEstadoDrogActionPerformed(evt);
-            }
-        });
 
         jTabelaDrog.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -94,24 +99,29 @@ public class CadastroDrogaria extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTabelaDrog);
 
         jBCadastrarDrog.setText("Cadastrar");
+        jBCadastrarDrog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBCadastrarDrogActionPerformed(evt);
+            }
+        });
 
         jBAlterarDrog.setText("Alterar");
+        jBAlterarDrog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBAlterarDrogActionPerformed(evt);
+            }
+        });
 
         jBExcluirDrog.setText("Excluir");
+        jBExcluirDrog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBExcluirDrogActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Gerenciar Medicamentos");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         jTextField1.setText("Pesquisa");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
 
         jButton2.setText("Realizar Pesquisa");
 
@@ -270,21 +280,77 @@ public class CadastroDrogaria extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTEstadoDrogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTEstadoDrogActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTEstadoDrogActionPerformed
+    private void jBCadastrarDrogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCadastrarDrogActionPerformed
+        
+         try {
+             Drogaria drog = new Drogaria();
+            DrogariaDAO ddao = new DrogariaDAO();
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+            drog.setNomeDrogaria(jTNomeDrog.getText());
+            drog.setRazaoSocial(jTRazaoDrog.getText());
+            drog.setEmail(jTEmailDrog.getText());
+            drog.setCnpj(jTCnpjDrog.getText());
+            drog.setCidade(jTCidadeDrog.getText());
+            drog.setEstado(jTEstadoDrog.getText());
+            drog.setCep(jTCepDrog.getText());            
+            
+            ddao.create(drog);
+            dt.recarregaTabela();
+//            limparCadastro();
+        } catch (Exception e) {
+             JOptionPane.showMessageDialog(null, "Falha ao cadastrar dados" + e);
+        }
+        
+        
+        
+        
+    }//GEN-LAST:event_jBCadastrarDrogActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void jBAlterarDrogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAlterarDrogActionPerformed
+        
+           try {
+           
+        if (jTabelaDrog.getSelectedRow() != -1) {
+            dt.setValueAt(jTNomeDrog.getText(), jTabelaDrog.getSelectedRow(), 0);
+            dt.setValueAt(jTRazaoDrog.getText(), jTabelaDrog.getSelectedRow(), 1);
+            dt.setValueAt(jTEmailDrog.getText(), jTabelaDrog.getSelectedRow(), 2);
+            dt.setValueAt(jTCnpjDrog.getText(), jTabelaDrog.getSelectedRow(), 3);
+            dt.setValueAt(jTCidadeDrog.getText(), jTabelaDrog.getSelectedRow(), 4);
+            dt.setValueAt(jTEstadoDrog.getText(), jTabelaDrog.getSelectedRow(), 5);
+            dt.setValueAt(jTCepDrog.getText(), jTabelaDrog.getSelectedRow(), 6);
+            
+            Drogaria drog = dt.pegaDadosLinha(jTabelaDrog.getSelectedRow());
+            DrogariaDAO ddao = new DrogariaDAO();
+            
+            ddao.update(drog);
+            dt.recarregaTabela();
+            limparCadastro();
+        }
+       
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Falha ao atualizar dados: " + e);
+        }
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_jBAlterarDrogActionPerformed
 
-    private void jTRazaoDrogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTRazaoDrogActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTRazaoDrogActionPerformed
+    private void jBExcluirDrogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBExcluirDrogActionPerformed
+        
+           if (jTabelaDrog.getSelectedRow() != -1) {
+            Drogaria drog = dt.pegaDadosLinha(jTabelaDrog.getSelectedRow());
+            DrogariaDAO ddao = new DrogariaDAO();
+            
+            ddao.delete(drog);
+            dt.recarregaTabela();
+            limparCadastro();
+
+        }
+
+        
+    }//GEN-LAST:event_jBExcluirDrogActionPerformed
 
     /**
      * @param args the command line arguments

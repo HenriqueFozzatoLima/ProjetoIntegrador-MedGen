@@ -81,12 +81,6 @@ public class CadastroFornecedor extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTEstadoFor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTEstadoForActionPerformed(evt);
-            }
-        });
-
         jBCadastrarFor.setText("Cadastrar");
         jBCadastrarFor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,18 +103,8 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         });
 
         jButton1.setText("Gerenciar Medicamentos");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         jTextField1.setText("Pesquisa");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
 
         jButton2.setText("Realizar Pesquisa");
 
@@ -295,18 +279,6 @@ public class CadastroFornecedor extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTEstadoForActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTEstadoForActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTEstadoForActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jBCadastrarForActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCadastrarForActionPerformed
 

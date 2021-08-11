@@ -5,19 +5,32 @@
  */
 package Janelas;
 
+import DAO.MedicamentoDAO;
+import Model.MedicamentoTableModel;
+import Objetos.Medicamento;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
  */
 public class CadastrarMedicamento extends javax.swing.JFrame {
-
+    MedicamentoTableModel mt = new MedicamentoTableModel();
     /**
      * Creates new form CadastrarMedicamento
      */
     public CadastrarMedicamento() {
         initComponents();
+        jTabelaMed.setModel(mt);
+        mt.recarregaTabela();
     }
 
+    public void limparCadastro(){
+        jTDescMed.setText("");
+        jTQtdeMed.setText("");
+        jTCodFor.setText("");
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -46,15 +59,20 @@ public class CadastrarMedicamento extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jBAlterarMed.setText("Alterar");
-
-        jBExcluirMed.setText("Excluir");
-
-        jButton1.setText("Gerenciar Medicamentos");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jBAlterarMed.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jBAlterarMedActionPerformed(evt);
             }
         });
+
+        jBExcluirMed.setText("Excluir");
+        jBExcluirMed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBExcluirMedActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Gerenciar Medicamentos");
 
         jTextField1.setText("Pesquisa");
 
@@ -67,12 +85,17 @@ public class CadastrarMedicamento extends javax.swing.JFrame {
         jLabel5.setText("Código do Fornecedor:");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Cadastro de Produto");
+        jLabel1.setText("Cadastro de Medicamento");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel6.setText("Quantidade:");
 
         jBCadastrarMed.setText("Cadastrar");
+        jBCadastrarMed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBCadastrarMedActionPerformed(evt);
+            }
+        });
 
         jTabelaMed.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -85,6 +108,11 @@ public class CadastrarMedicamento extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTabelaMed.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabelaMedMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTabelaMed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -161,9 +189,79 @@ public class CadastrarMedicamento extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jBCadastrarMedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCadastrarMedActionPerformed
+        
+          try {
+              MedicamentoDAO mdao = new MedicamentoDAO();
+            Medicamento m = new Medicamento();
+
+            m.setDescricaoMed(jTDescMed.getText());
+            m.setQtdeMed(Integer.parseInt(jTQtdeMed.getText()));
+            m.setCodLab(Integer.parseInt(jTCodFor.getText()));
+            
+            mdao.create(m);
+            mt.recarregaTabela();
+            limparCadastro();
+
+        } catch (Exception e) {
+              JOptionPane.showMessageDialog(null, "Falha ao cadastrar dados" + e);
+        }
+        
+    }//GEN-LAST:event_jBCadastrarMedActionPerformed
+
+    private void jBAlterarMedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAlterarMedActionPerformed
+        
+          try {
+
+            if (jTabelaMed.getSelectedRow() != -1) {
+                mt.setValueAt(jTDescMed.getText(), jTabelaMed.getSelectedRow(), 0);
+                mt.setValueAt(jTQtdeMed.getText(), jTabelaMed.getSelectedRow(), 1);
+                mt.setValueAt(jTCodFor.getText(), jTabelaMed.getSelectedRow(), 2);
+                
+                Medicamento med = mt.pegaDadosLinha(jTabelaMed.getSelectedRow());
+                MedicamentoDAO mdao = new MedicamentoDAO();
+
+                mdao.update(med);
+                mt.recarregaTabela();
+//                limparCadastro();
+
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Falha ao atualizar dados: " + e);
+        }
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_jBAlterarMedActionPerformed
+
+    private void jBExcluirMedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBExcluirMedActionPerformed
+       
+          if (jTabelaMed.getSelectedRow() != -1) {
+            Medicamento med = mt.pegaDadosLinha(jTabelaMed.getSelectedRow());
+            MedicamentoDAO mdao = new MedicamentoDAO();
+
+            mdao.delete(med);
+            mt.recarregaTabela();
+            limparCadastro();
+
+        }
+        
+    }//GEN-LAST:event_jBExcluirMedActionPerformed
+
+    private void jTabelaMedMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabelaMedMouseClicked
+     
+        
+        
+        Medicamento med = mt.pegaDadosLinha(jTabelaMed.getSelectedRow());
+
+        jTDescMed.setText(med.getDescricaoMed());
+        jTQtdeMed.setText(String.valueOf(med.getQtdeMed()));
+        jTCodFor.setText(String.valueOf(med.getCodLab()));
+        
+    }//GEN-LAST:event_jTabelaMedMouseClicked
 
     /**
      * @param args the command line arguments
